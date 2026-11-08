@@ -347,14 +347,6 @@
           "why": "Anyma's newest. Mathame dropped it in the same 2026 Seoul set. Vocal and moody, the same pull as Cola."
         },
         {
-          "key": "andrea-frisina-irregular-synth-dub-city",
-          "title": "Dub City",
-          "artists": "Andrea Frisina, Irregular Synth",
-          "spotify": "2MhpLZKCg6LVTRmQqBZzwZ",
-          "lane": "groovy",
-          "why": "A cross-set track: Hot Since 82 played it on his Rinse FM show, and Mathame played it in Seoul 2026. Groove a dark-side DJ still reaches for."
-        },
-        {
           "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
           "title": "Looking at Your Pager (Solomun Extended Remix)",
           "artists": "KH, Solomun",
@@ -417,6 +409,17 @@
       "spotify": "5NIh6RvA8hOV31OnQGdk4d",
       "decision": "drop",
       "lane": "dark",
+      "role": null,
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "andrea-frisina-irregular-synth-dub-city",
+      "title": "Dub City",
+      "artists": "Andrea Frisina, Irregular Synth",
+      "spotify": "2MhpLZKCg6LVTRmQqBZzwZ",
+      "decision": "drop",
+      "lane": "groovy",
       "role": null,
       "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-08"
