@@ -317,14 +317,6 @@
       "date": "2026-11-08",
       "picks": [
         {
-          "key": "patrick-topping-be-sharp-say-nowt",
-          "title": "Be Sharp Say Nowt",
-          "artists": "Patrick Topping",
-          "spotify": "4MCulbFJ3EEPOmHXwxaFiW",
-          "lane": "groovy",
-          "why": "A long, hypnotic roller in the same pocket as Bibi's Stay Missing and Hot Since 82's Veins."
-        },
-        {
           "key": "camelphat-elderbrook-cola",
           "title": "Cola",
           "artists": "CamelPhat, Elderbrook",
@@ -343,5 +335,17 @@
       ]
     }
   ],
-  "history": []
+  "history": [
+    {
+      "key": "patrick-topping-be-sharp-say-nowt",
+      "title": "Be Sharp Say Nowt",
+      "artists": "Patrick Topping",
+      "spotify": "4MCulbFJ3EEPOmHXwxaFiW",
+      "decision": "drop",
+      "lane": "groovy",
+      "role": null,
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    }
+  ]
 }
