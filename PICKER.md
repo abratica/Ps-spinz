@@ -50,8 +50,8 @@ Rules:
 ## Step 3: get the Spotify id
 
 1. Spotify connector (`search`) with "<title> by <artist>". Take the track whose title and artists match.
-2. If the connector filters it out ("licensing restrictions"), WebSearch `site:open.spotify.com/track "<title>" <artist>` and take the id from the matching link.
-3. If you still can't confirm it, set `spotify` to null. The app looks it up itself once Spotify is connected. Don't pick more than one null per day; prefer a different track instead.
+2. If the connector filters it out ("licensing restrictions"), which happens a lot for Afterlife / Interscope / UMG releases (Anyma, Cassian, Kevin de Vries, CamelPhat remixes), use WebSearch with `mode: "extended"` and the query `"<title>" <artists> open.spotify.com track`. Take the id from the `open.spotify.com/track/<id>` (or `/intl-xx/track/<id>`) result whose title and artists match. Prefer the plain version over one marked "(Mixed)". The app's own Spotify lookup can't see these releases, so this step matters.
+3. If you still can't confirm it, set `spotify` to null (Andrew can paste the link in the app). Don't pick more than one null per day; prefer a different track instead.
 
 ## Step 4: write today's picks
 

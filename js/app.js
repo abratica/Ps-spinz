@@ -639,6 +639,13 @@
     try { await load(); }
     catch (e) { app.innerHTML = `<p class="status">Couldn't load PS Spinz. Check your connection.</p>`; return; }
     render();
-    if (live && sp.connected()) sp.resolveMissing().catch(() => {});
+    if (live && sp.connected()) {
+      await sp.resolveMissing().catch(() => {});
+      // Crate tracks that got a Spotify link since last time (e.g. filled in by the daily run) go into the playlist.
+      const linked = S.crate.filter((c) => c.spotify).length;
+      if (String(linked) !== store.get("sp-synced")) {
+        sp.syncCrate().then((n) => { store.set("sp-synced", String(linked)); if (n) toast(`Added ${n} track${n > 1 ? "s" : ""} to your PS Spinz playlist`); }).catch(() => {});
+      }
+    }
   })();
 })();
