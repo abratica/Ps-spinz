@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "crate": [
+    {
+      "key": "michael-bibi-kettama-mystery-of-raw",
+      "title": "Mystery of Raw",
+      "artists": "Michael Bibi, KETTAMA",
+      "spotify": "2v4NP088R6LUgFBDF9JqBg",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "shaded-bad-mofo",
+      "title": "Bad Mofo",
+      "artists": "Shaded",
+      "spotify": "6vmNhtVtpXqhDVKVHxobIW",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "max-styler-gorgon-city-touch",
+      "title": "Touch",
+      "artists": "Max Styler, Gorgon City",
+      "spotify": "1gvM952Zuyl3cPZhEgS61d",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "wax-motif-brklyn-issa-vibe",
+      "title": "Issa Vibe",
+      "artists": "Wax Motif, BRKLYN",
+      "spotify": "2I5faAdg3IZbd6HEn6Blfz",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "le-pard-marcos-gonzalez-one-thing",
+      "title": "One Thing",
+      "artists": "Le Pard, Marcos Gonzalez",
+      "spotify": "1MvmvihrbRjxOYg7dgx2KD",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "fisher-world-hold-on",
+      "title": "World Hold On",
+      "artists": "FISHER",
+      "spotify": null,
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "sunday-scaries-pickuplines-chill-like-that",
+      "title": "Chill Like That",
+      "artists": "Sunday Scaries, PiCKUPLiNES",
+      "spotify": "2NZABaUZUleW2mIuDlh5ZA",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "essel-lennon-extended-mix",
+      "title": "Lennon (Extended Mix)",
+      "artists": "ESSEL",
+      "spotify": "6lsonzq6HYzNN5VEYIJMHR",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "michael-bibi-whispers-in-the-wind",
+      "title": "Whispers In The Wind",
+      "artists": "Michael Bibi",
+      "spotify": "3QUVgi7fLRKQL5j0irl5jd",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "michael-bibi-stay-missing",
+      "title": "Stay Missing",
+      "artists": "Michael Bibi",
+      "spotify": "6vz72ILHpuCCpLujSl6roE",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "dennis-cruz-hydroponic",
+      "title": "Hydroponic",
+      "artists": "Dennis Cruz",
+      "spotify": "6jCvPv2lNJPUT1UITvlySF",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "albertina-guy-gerber-bocat-michael-bibi-remix",
+      "title": "Bocat (Michael Bibi Remix)",
+      "artists": "Albertina, Guy Gerber",
+      "spotify": "32eqGAgvDMAucaoD7es7uv",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "paperclip-people-throw-slam-s-rtm-remix",
+      "title": "Throw (Slam's RTM Remix)",
+      "artists": "Paperclip People",
+      "spotify": "5Az5ZI6idNY1JbcIGVoBKE",
+      "lane": "groovy",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "hot-since-82-veins",
+      "title": "Veins",
+      "artists": "Hot Since 82",
+      "spotify": "0ZUYNjUthUJ0FVjUEOCDFb",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "argy-son-of-son-anyma-voices-in-my-head",
+      "title": "Voices In My Head",
+      "artists": "Argy, Son of Son, Anyma",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "cassian-script-belladonna-where-i-m-from",
+      "title": "Where I'm From",
+      "artists": "Cassian, SCRIPT, Belladonna",
+      "spotify": "0JFNTfRWLqQ09z9ZHldX8d",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "cassian-landa",
+      "title": "Landa",
+      "artists": "Cassian",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "rafael-cerato-kinky-sound-attack",
+      "title": "Attack",
+      "artists": "Rafael Cerato, Kinky Sound",
+      "spotify": "5jRTX1No8nYImLewdDVIez",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "dubfire-roadkill",
+      "title": "Roadkill",
+      "artists": "Dubfire",
+      "spotify": "7m5buYqueKWdd0fWQW5AYw",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "camelphat-eden-siren-song",
+      "title": "Siren Song",
+      "artists": "CamelPhat, Eden",
+      "spotify": "4A96LpUrw3lJI6Bx10JU6u",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "super8-tab-station2station-helsinki-scorchin-station2station-extended-mix",
+      "title": "Helsinki Scorchin' (station2station Extended Mix)",
+      "artists": "Super8 & Tab, station2station",
+      "spotify": "4xkRbhiPwIvE79PpvVdMyz",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "camelphat-anyma-the-sign-kevin-de-vries-remix",
+      "title": "The Sign (Kevin de Vries Remix)",
+      "artists": "CamelPhat, Anyma",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "kevin-de-vries-add-us-entrance",
+      "title": "Entrance",
+      "artists": "Kevin de Vries, Add-us",
+      "spotify": "61qsLCbqMIYKWcHi0QRv9q",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "meduza-hayla-kevin-de-vries-slvr-another-world-kevin-de-vries-slvr-remix",
+      "title": "Another World (Kevin de Vries & SLVR Remix)",
+      "artists": "Meduza, Hayla, Kevin de Vries, SLVR",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "kevin-de-vries-mau-p-metro",
+      "title": "Metro",
+      "artists": "Kevin de Vries, Mau P",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "solomun-anyma-till-i-die-feat-claudia-valentina",
+      "title": "Till I Die (feat. Claudia Valentina)",
+      "artists": "Solomun, Anyma",
+      "spotify": "4pawR52ONFQTCYUzI6C2xZ",
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "kevin-de-vries-jast-born-like-that",
+      "title": "Born Like That",
+      "artists": "Kevin de Vries, Jast",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "anyma-pictures-of-you",
+      "title": "Pictures Of You",
+      "artists": "Anyma",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "fideles-be-no-rain-night-after-night-camelphat-remix",
+      "title": "Night After Night (CamelPhat Remix)",
+      "artists": "Fideles, Be No Rain",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "alex-wann-aaron-hibell-set-me-free-camelphat-remix",
+      "title": "Set Me Free (CamelPhat Remix)",
+      "artists": "Alex Wann, Aaron Hibell",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    },
+    {
+      "key": "cassian-yotto-da-hool-love-parade",
+      "title": "Love Parade",
+      "artists": "Cassian, YOTTO, Da Hool",
+      "spotify": null,
+      "lane": "dark",
+      "role": null,
+      "from": "seed",
+      "added": "2026-11-08"
+    }
+  ],
+  "inbox": [
+    {
+      "date": "2026-11-08",
+      "picks": [
+        {
+          "key": "patrick-topping-be-sharp-say-nowt",
+          "title": "Be Sharp Say Nowt",
+          "artists": "Patrick Topping",
+          "spotify": "4MCulbFJ3EEPOmHXwxaFiW",
+          "lane": "groovy",
+          "why": "A long, hypnotic roller in the same pocket as Bibi's Stay Missing and Hot Since 82's Veins."
+        },
+        {
+          "key": "camelphat-elderbrook-cola",
+          "title": "Cola",
+          "artists": "CamelPhat, Elderbrook",
+          "spotify": "0aL5jEWqfIwNDB3tdzyzH4",
+          "lane": "dark",
+          "why": "CamelPhat's moody classic. A natural partner for Siren Song, already in your crate."
+        },
+        {
+          "key": "k-lsch-grey",
+          "title": "Grey",
+          "artists": "Kölsch",
+          "spotify": "4rjA5kJJWbwU1prXCvg6Fk",
+          "lane": "dark",
+          "why": "Dark and melodic but still on a house groove, the kind of bridge from your Bibi side into Cassian and Anyma."
+        }
+      ]
+    }
+  ],
+  "history": []
+}

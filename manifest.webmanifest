@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "PS Spinz",
+  "short_name": "PS Spinz",
+  "description": "Three new DJ tracks a day. Keep them or drop them.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0E0C14",
+  "theme_color": "#0E0C14",
+  "icons": [
+    { "src": "icons/ps-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/ps-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/ps-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
