@@ -591,8 +591,18 @@
   /* ---------- install prompt (same pattern as the other PS apps) ---------- */
   const standalone = () => window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
   const dismissed = () => Date.now() - Number(store.get("install-off2") || 0) < 3 * 864e5;
-  function installBar(label, onGo) {
-    if (standalone() || dismissed() || document.querySelector(".install-bar")) return;
+  // Once the app has been opened from the home screen (or Chrome reports it installed), never nag again.
+  // Chrome on Android shares this storage between the browser and the installed app.
+  if (standalone()) store.set("installed", "1");
+  const installed = async () => {
+    if (store.get("installed")) return true;
+    try {
+      if (navigator.getInstalledRelatedApps && (await navigator.getInstalledRelatedApps()).length) { store.set("installed", "1"); return true; }
+    } catch { /* not supported */ }
+    return false;
+  };
+  async function installBar(label, onGo) {
+    if (standalone() || dismissed() || document.querySelector(".install-bar") || (await installed())) return;
     const bar = document.createElement("div");
     bar.className = "install-bar";
     bar.innerHTML = `<span class="install-text"><b>Get the PS Spinz app</b><span>Your daily three on your home screen</span></span>
@@ -618,7 +628,7 @@
     } else installHelp();
   }
   window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; });
-  window.addEventListener("appinstalled", () => document.querySelector(".install-bar")?.remove());
+  window.addEventListener("appinstalled", () => { store.set("installed", "1"); document.querySelector(".install-bar")?.remove(); });
   setTimeout(() => installBar("Install", install), 1200);
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
