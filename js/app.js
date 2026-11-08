@@ -45,7 +45,7 @@
     const t = themePref();
     document.documentElement.dataset.theme = t;
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = t === "dark" ? "#07060B" : "#0E0C14";
+    if (meta) meta.content = t === "dark" ? "#000811" : "#000811";
   };
   if (darkMQ && darkMQ.addEventListener) darkMQ.addEventListener("change", applyTheme);
   applyTheme();
@@ -383,7 +383,7 @@
     const line = r === "inbox" ? (waiting ? `${waiting} to hear` : "All caught up") : `${S.crate.length} tracks in your crate`;
     return `<header class="masthead">
       <button class="icon-btn left" type="button" data-act="settings" aria-label="Settings">${gearSvg}</button>
-      <h1 class="wordmark">PS SPIN<span>Z</span></h1>
+      <h1 class="wordmark"><img src="brand/banner.webp" alt="PS Spinz" width="1200" height="400"></h1>
       <p class="dateline">${esc(line)}</p>
       <button class="icon-btn right" type="button" data-act="theme" aria-label="Switch light or dark mode">${themeSvg}</button>
       <nav class="tabs" role="tablist">
