@@ -180,3 +180,4 @@ html[data-theme="dark"] .toast button { color: var(--accent-text); }
 .steps li { margin-bottom: 6px; }
 .linkish { background: none; border: 0; padding: 0; color: var(--accent-text); font: inherit; font-weight: 700; text-decoration: underline; }
 .pick.gone { pointer-events: none; }
+body:has(.install-bar) { padding-bottom: calc(110px + env(safe-area-inset-bottom)); }

@@ -514,6 +514,7 @@
              <div class="sheet-actions"><button class="btn small primary" type="button" data-act2="sp-connect">Connect Spotify</button></div>`}
         <p class="help" id="sp-status"></p>
       </div>
+      ${standalone() ? "" : `<hr class="sep"><div class="field"><div class="field-label">App</div><div class="sheet-actions"><button class="btn small primary" type="button" data-act2="install">Install PS Spinz</button></div></div>`}
       <div class="sheet-actions" style="margin-top:14px"><button class="btn" type="button" data-close>Done</button></div>`,
     (el) => {
       el.addEventListener("click", async (e) => {
@@ -547,6 +548,8 @@
             spStatus.innerHTML = `<b>Found ${ok} of ${rep.length}.</b>` + rep.filter((r) => !r.ok).map((r) => `<br>• <b>${esc(r.title)}</b>: ${esc(r.why)}`).join("")
               + (ok < rep.length ? "<br>For those, use “paste the link” on the track's card." : "");
           } catch (err) { spStatus.innerHTML = `<span class="bad">${esc(err.message)}</span>`; }
+        } else if (a === "install") {
+          el.remove(); install();
         } else if (a === "sp-off") {
           sp.disconnect(); el.remove(); render();
         }
@@ -587,7 +590,7 @@
 
   /* ---------- install prompt (same pattern as the other PS apps) ---------- */
   const standalone = () => window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
-  const dismissed = () => Date.now() - Number(store.get("install-off") || 0) < 14 * 864e5;
+  const dismissed = () => Date.now() - Number(store.get("install-off2") || 0) < 3 * 864e5;
   function installBar(label, onGo) {
     if (standalone() || dismissed() || document.querySelector(".install-bar")) return;
     const bar = document.createElement("div");
@@ -595,19 +598,28 @@
     bar.innerHTML = `<span class="install-text"><b>Get the PS Spinz app</b><span>Your daily three on your home screen</span></span>
       <button type="button" class="install-go">${label}</button><button type="button" class="install-x" aria-label="Not now">×</button>`;
     bar.querySelector(".install-go").addEventListener("click", onGo);
-    bar.querySelector(".install-x").addEventListener("click", () => { store.set("install-off", String(Date.now())); bar.remove(); });
+    bar.querySelector(".install-x").addEventListener("click", () => { store.set("install-off2", String(Date.now())); bar.remove(); });
     document.body.appendChild(bar);
   }
+  // The bar shows on every browser visit (not inside the installed app). Install uses Chrome's
+  // own install prompt when it offers one, otherwise shows the steps for this phone.
   let deferred = null;
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault(); deferred = e;
-    installBar("Install", async () => { deferred.prompt(); await deferred.userChoice.catch(() => {}); deferred = null; document.querySelector(".install-bar")?.remove(); });
-  });
-  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-    setTimeout(() => installBar("How", () => sheet(`<h3>Add to Home Screen</h3>
-      <ol class="steps"><li>Tap the <b>Share</b> button in Safari</li><li>Tap <b>Add to Home Screen</b> (you may need <b>More</b> first)</li><li>Tap <b>Add</b>. PS Spinz shows up with your other apps</li></ol>
-      <button class="btn" type="button" data-close>Got it</button>`)), 1500);
+  const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  function installHelp() {
+    sheet(isIOS
+      ? `<h3>Add to Home Screen</h3><ol class="steps"><li>Tap the <b>Share</b> button in Safari</li><li>Tap <b>Add to Home Screen</b> (you may need <b>More</b> first)</li><li>Tap <b>Add</b></li></ol><button class="btn" type="button" data-close>Got it</button>`
+      : `<h3>Install PS Spinz</h3><ol class="steps"><li>Tap <b>⋮</b> at the top right of Chrome</li><li>Tap <b>Add to Home screen</b> (or <b>Install app</b>)</li><li>Tap <b>Install</b>. PS Spinz shows up with your other apps</li></ol><p class="help" style="margin:-4px 0 12px">If Chrome shows <b>Open in app</b> instead, it's already installed: look for the PS Spinz icon.</p><button class="btn" type="button" data-close>Got it</button>`);
   }
+  async function install() {
+    if (deferred) {
+      const d = deferred; deferred = null;
+      d.prompt(); await d.userChoice.catch(() => {});
+      document.querySelector(".install-bar")?.remove();
+    } else installHelp();
+  }
+  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; });
+  window.addEventListener("appinstalled", () => document.querySelector(".install-bar")?.remove());
+  setTimeout(() => installBar("Install", install), 1200);
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
   /* ---------- start ---------- */
