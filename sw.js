@@ -1,6 +1,6 @@
 // PS Spinz. Cache names start with "spz-" and only "spz-" caches are ever cleaned up,
 // so this never touches the caches of other apps on the same site.
-const SHELL = "spz-shell-v2";
+const SHELL = "spz-shell-v3";
 const SHELL_FILES = ["./", "index.html", "manifest.webmanifest", "css/spinz.css", "js/app.js",
   "icons/ps-icon-192.png", "icons/ps-icon-512.png",
   "fonts/manrope-latin-500-normal.woff2", "fonts/manrope-latin-600-normal.woff2",
