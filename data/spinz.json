@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
+      "title": "Looking at Your Pager (Solomun Extended Remix)",
+      "artists": "KH, Solomun",
+      "spotify": "6MbOGISqUDEQnckKw2SYaZ",
+      "lane": "groovy",
+      "role": "groover",
+      "from": "pick",
+      "added": "2026-11-08",
+      "why": "Joris Voorn and Kevin de Vries slipped it into their melodic Awakenings 2026 set. A bridge from your groovy side into the dark one."
+    },
+    {
       "key": "cassian-ar-co-come-to-life",
       "title": "Come To Life",
       "artists": "Cassian, AR/CO",
@@ -345,14 +356,6 @@
           "spotify": null,
           "lane": "dark",
           "why": "Anyma's newest. Mathame dropped it in the same 2026 Seoul set. Vocal and moody, the same pull as Cola."
-        },
-        {
-          "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
-          "title": "Looking at Your Pager (Solomun Extended Remix)",
-          "artists": "KH, Solomun",
-          "spotify": "6MbOGISqUDEQnckKw2SYaZ",
-          "lane": "groovy",
-          "why": "Joris Voorn and Kevin de Vries slipped it into their melodic Awakenings 2026 set. A bridge from your groovy side into the dark one."
         }
       ]
     }
@@ -421,6 +424,17 @@
       "decision": "drop",
       "lane": "groovy",
       "role": null,
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
+      "title": "Looking at Your Pager (Solomun Extended Remix)",
+      "artists": "KH, Solomun",
+      "spotify": "6MbOGISqUDEQnckKw2SYaZ",
+      "decision": "keep",
+      "lane": "groovy",
+      "role": "groover",
       "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-08"
     }
