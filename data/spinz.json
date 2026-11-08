@@ -323,21 +323,7 @@
       "added": "2026-11-08"
     }
   ],
-  "inbox": [
-    {
-      "date": "2026-11-08",
-      "picks": [
-        {
-          "key": "k-lsch-grey",
-          "title": "Grey",
-          "artists": "Kölsch",
-          "spotify": "4rjA5kJJWbwU1prXCvg6Fk",
-          "lane": "dark",
-          "why": "Dark and melodic but still on a house groove, the kind of bridge from your Bibi side into Cassian and Anyma."
-        }
-      ]
-    }
-  ],
+  "inbox": [],
   "history": [
     {
       "key": "patrick-topping-be-sharp-say-nowt",
@@ -356,6 +342,17 @@
       "artists": "CamelPhat, Elderbrook",
       "spotify": "0aL5jEWqfIwNDB3tdzyzH4",
       "decision": "keep",
+      "lane": "dark",
+      "role": null,
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "k-lsch-grey",
+      "title": "Grey",
+      "artists": "Kölsch",
+      "spotify": "4rjA5kJJWbwU1prXCvg6Fk",
+      "decision": "drop",
       "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-08",
