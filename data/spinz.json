@@ -339,14 +339,6 @@
       "date": "2026-11-08",
       "picks": [
         {
-          "key": "mathame-son-of-son-jonos-meet-me",
-          "title": "Meet Me",
-          "artists": "Mathame, Son of Son, JONOS",
-          "spotify": "5NIh6RvA8hOV31OnQGdk4d",
-          "lane": "dark",
-          "why": "Mathame played it in Seoul this year. Son of Son is also on Voices In My Head, already in your crate."
-        },
-        {
           "key": "anyma-out-of-my-body-feat-ejae",
           "title": "Out Of My Body (feat. EJAE)",
           "artists": "Anyma",
@@ -415,6 +407,17 @@
       "decision": "keep",
       "lane": "dark",
       "role": "groover",
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "mathame-son-of-son-jonos-meet-me",
+      "title": "Meet Me",
+      "artists": "Mathame, Son of Son, JONOS",
+      "spotify": "5NIh6RvA8hOV31OnQGdk4d",
+      "decision": "drop",
+      "lane": "dark",
+      "role": null,
       "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-08"
     }
