@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "cassian-ar-co-come-to-life",
+      "title": "Come To Life",
+      "artists": "Cassian, AR/CO",
+      "spotify": "0CBRDrO5BuFxmfIjOSYUaW",
+      "lane": "dark",
+      "role": "groover",
+      "from": "pick",
+      "added": "2026-11-08",
+      "why": "Kevin de Vries played it on the Tomorrowland 2026 main stage in the same set as Born Like That and Metro (both in your crate), then again with Joris Voorn at Awakenings 2026."
+    },
+    {
       "key": "camelphat-elderbrook-cola",
       "title": "Cola",
       "artists": "CamelPhat, Elderbrook",
@@ -328,14 +339,6 @@
       "date": "2026-11-08",
       "picks": [
         {
-          "key": "cassian-ar-co-come-to-life",
-          "title": "Come To Life",
-          "artists": "Cassian, AR/CO",
-          "spotify": "0CBRDrO5BuFxmfIjOSYUaW",
-          "lane": "dark",
-          "why": "Kevin de Vries played it on the Tomorrowland 2026 main stage in the same set as Born Like That and Metro (both in your crate), then again with Joris Voorn at Awakenings 2026."
-        },
-        {
           "key": "mathame-son-of-son-jonos-meet-me",
           "title": "Meet Me",
           "artists": "Mathame, Son of Son, JONOS",
@@ -401,6 +404,17 @@
       "decision": "drop",
       "lane": "dark",
       "role": null,
+      "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "cassian-ar-co-come-to-life",
+      "title": "Come To Life",
+      "artists": "Cassian, AR/CO",
+      "spotify": "0CBRDrO5BuFxmfIjOSYUaW",
+      "decision": "keep",
+      "lane": "dark",
+      "role": "groover",
       "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-08"
     }
