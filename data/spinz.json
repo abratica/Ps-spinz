@@ -323,7 +323,53 @@
       "added": "2026-11-08"
     }
   ],
-  "inbox": [],
+  "inbox": [
+    {
+      "date": "2026-11-08",
+      "picks": [
+        {
+          "key": "cassian-ar-co-come-to-life",
+          "title": "Come To Life",
+          "artists": "Cassian, AR/CO",
+          "spotify": "0CBRDrO5BuFxmfIjOSYUaW",
+          "lane": "dark",
+          "why": "Kevin de Vries played it on the Tomorrowland 2026 main stage in the same set as Born Like That and Metro (both in your crate), then again with Joris Voorn at Awakenings 2026."
+        },
+        {
+          "key": "mathame-son-of-son-jonos-meet-me",
+          "title": "Meet Me",
+          "artists": "Mathame, Son of Son, JONOS",
+          "spotify": "5NIh6RvA8hOV31OnQGdk4d",
+          "lane": "dark",
+          "why": "Mathame played it in Seoul this year. Son of Son is also on Voices In My Head, already in your crate."
+        },
+        {
+          "key": "anyma-out-of-my-body-feat-ejae",
+          "title": "Out Of My Body (feat. EJAE)",
+          "artists": "Anyma",
+          "spotify": null,
+          "lane": "dark",
+          "why": "Anyma's newest. Mathame dropped it in the same 2026 Seoul set. Vocal and moody, the same pull as Cola."
+        },
+        {
+          "key": "andrea-frisina-irregular-synth-dub-city",
+          "title": "Dub City",
+          "artists": "Andrea Frisina, Irregular Synth",
+          "spotify": "2MhpLZKCg6LVTRmQqBZzwZ",
+          "lane": "groovy",
+          "why": "A cross-set track: Hot Since 82 played it on his Rinse FM show, and Mathame played it in Seoul 2026. Groove a dark-side DJ still reaches for."
+        },
+        {
+          "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
+          "title": "Looking at Your Pager (Solomun Extended Remix)",
+          "artists": "KH, Solomun",
+          "spotify": "6MbOGISqUDEQnckKw2SYaZ",
+          "lane": "groovy",
+          "why": "Joris Voorn and Kevin de Vries slipped it into their melodic Awakenings 2026 set. A bridge from your groovy side into the dark one."
+        }
+      ]
+    }
+  ],
   "history": [
     {
       "key": "patrick-topping-be-sharp-say-nowt",
