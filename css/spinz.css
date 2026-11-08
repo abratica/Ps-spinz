@@ -178,3 +178,5 @@ html[data-theme="dark"] .toast button { color: var(--accent-text); }
 .install-x { background: none; border: 0; color: var(--chalk); font-size: 22px; padding: 0 6px; opacity: .7; }
 .steps { margin: 0 0 12px; padding-left: 20px; }
 .steps li { margin-bottom: 6px; }
+.linkish { background: none; border: 0; padding: 0; color: var(--accent-text); font: inherit; font-weight: 700; text-decoration: underline; }
+.pick.gone { pointer-events: none; }

@@ -150,7 +150,7 @@
   // Drops wait a few seconds so Undo can cancel them; leaving the app saves right away.
   const pendingDrops = new Map();
   function doDrop(key) {
-    const hit = findPick(S, key); if (!hit) return;
+    const hit = findPick(S, key); if (!hit || pendingDrops.has(key)) return;
     const card = app.querySelector(`[data-key="${CSS.escape(key)}"]`);
     if (card) card.classList.add("gone");
     const fire = () => {
@@ -174,6 +174,24 @@
   function flushDrops() { for (const { timer, fire } of [...pendingDrops.values()]) { clearTimeout(timer); fire(); } }
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushDrops(); });
   window.addEventListener("pagehide", flushDrops);
+
+  async function pasteLink(key) {
+    if (!live) { toast("Add your GitHub key in Settings to save"); return; }
+    let text = "";
+    try { text = await navigator.clipboard.readText(); } catch { /* permission denied: ask instead */ }
+    if (!/open\.spotify\.com\/(intl-[a-z]+\/)?track\/[A-Za-z0-9]{22}|spotify:track:[A-Za-z0-9]{22}/.test(text)) text = prompt("Paste the Spotify link for this track") || "";
+    const m = /track[/:]([A-Za-z0-9]{22})/.exec(text);
+    if (!m) { if (text) toast("That doesn't look like a Spotify track link"); return; }
+    const id = m[1];
+    const t = [...S.crate, ...S.inbox.flatMap((d) => d.picks)].find((x) => x.key === key);
+    commit(`Spotify link: ${t ? t.title : key}`, (st) => {
+      for (const x of [...st.crate, ...st.inbox.flatMap((d) => d.picks)]) if (x.key === key) x.spotify = id;
+    });
+    render();
+    const inCrate = S.crate.some((c) => c.key === key);
+    if (inCrate && sp.connected()) sp.add([id]).then(() => toast("Linked · added to your playlist")).catch(() => toast("Linked"));
+    else toast("Linked");
+  }
 
   function setTags(key, patch) {
     commit(`Tag: ${S.crate.find((c) => c.key === key)?.title || key}`, (st) => {
@@ -286,32 +304,45 @@
     }
     // Find a Spotify id for tracks that don't have one yet.
     const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+    // Returns { id } when found, otherwise { why } saying what Spotify sent back.
     async function lookup(title, artists) {
       const core = title.replace(/\s*\(.*?\)\s*/g, " ").trim();
-      const first = artists.split(",")[0].trim();
+      const names = artists.split(",").map((a) => a.trim()).filter(Boolean);
       const want = norm(title), wantCore = norm(core);
       const versionWanted = /\((.*?)\)/.exec(title)?.[1];
-      for (const q of [`track:${core} artist:${first}`, `${core} ${first}`]) {
-        const r = await api(`/search?type=track&limit=10&q=${encodeURIComponent(q)}`);
-        const items = r?.tracks?.items || [];
-        const byArtist = items.filter((t) => t.artists.some((a) => norm(artists).includes(norm(a.name)) || norm(a.name).includes(norm(first))) && norm(t.name).includes(wantCore));
-        if (!byArtist.length) continue;
-        const exact = byArtist.find((t) => norm(t.name) === want)
-          || (versionWanted && byArtist.find((t) => norm(t.name).includes(norm(versionWanted))))
-          || byArtist.find((t) => !/remix|edit|mixed/i.test(t.name.replace(core, "")))
-          || byArtist[0];
-        return exact.id;
+      const artistHit = (t) => t.artists.some((a) => names.some((n) => norm(a.name) === norm(n) || norm(a.name).includes(norm(n)) || norm(n).includes(norm(a.name))));
+      const queries = [`track:"${core}" artist:"${names[0]}"`, `${core} ${names[0]}`, ...names.slice(1, 3).map((n) => `${core} ${n}`), core];
+      let closest = null, seen = 0;
+      for (const q of queries) {
+        const r = await api(`/search?type=track&limit=10&market=from_token&q=${encodeURIComponent(q)}`);
+        const items = (r?.tracks?.items || []).filter(Boolean);
+        seen += items.length;
+        if (!closest && items[0]) closest = `${items[0].name} · ${items[0].artists.map((a) => a.name).join(", ")}`;
+        const good = items.filter((t) => artistHit(t) && norm(t.name).includes(wantCore));
+        if (!good.length) continue;
+        const pick = good.find((t) => norm(t.name) === want)
+          || (versionWanted && good.find((t) => norm(t.name).includes(norm(versionWanted))))
+          || good.find((t) => !/remix|edit|mixed/i.test(t.name.replace(core, "")))
+          || good[0];
+        return { id: pick.id };
       }
-      return null;
+      return { why: seen ? `Spotify's search didn't return it. Closest: ${closest}` : "Spotify's search returned nothing for it" };
     }
-    async function resolveMissing() {
+    // force: ignore the once-a-week limit and report every track (used by the Settings button).
+    async function resolveMissing(force) {
       const tried = JSON.parse(store.get("sp-tried") || "{}");
       const weekAgo = Date.now() - 7 * 864e5;
-      const todo = [...S.crate, ...S.inbox.flatMap((d) => d.picks)].filter((t) => !t.spotify && !(tried[t.key] > weekAgo));
-      if (!todo.length) return 0;
-      const found = {};
+      const todo = [...S.crate, ...S.inbox.flatMap((d) => d.picks)].filter((t) => !t.spotify && (force || !(tried[t.key] > weekAgo)));
+      const found = {}, report = [];
       for (const t of todo) {
-        try { const id = await lookup(t.title, t.artists); if (id) found[t.key] = id; } catch (e) { if (e.status === 429) break; }
+        try {
+          const r = await lookup(t.title, t.artists);
+          if (r.id) found[t.key] = r.id;
+          report.push({ title: t.title, artists: t.artists, ok: !!r.id, why: r.why });
+        } catch (e) {
+          report.push({ title: t.title, artists: t.artists, ok: false, why: `Spotify error: ${e.message}` });
+          if (e.status === 429) break;
+        }
         tried[t.key] = Date.now();
       }
       store.set("sp-tried", JSON.stringify(tried));
@@ -322,7 +353,7 @@
         });
         render();
       }
-      return n;
+      return report;
     }
     return {
       REDIRECT, login, finishLogin, add, remove, resolveMissing,
@@ -340,7 +371,7 @@
   const spotifyUrl = (t) => t.spotify ? `https://open.spotify.com/track/${t.spotify}` : `https://open.spotify.com/search/${encodeURIComponent(`${t.title.replace(/\s*\(.*?\)/g, "")} ${t.artists.split(",")[0]}`)}`;
   const player = (t) => t.spotify
     ? `<div class="player"><iframe src="https://open.spotify.com/embed/track/${esc(t.spotify)}?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Play ${esc(t.title)}"></iframe></div>`
-    : `<p class="nolink">No Spotify link yet${sp.connected() ? "" : ". Connecting Spotify in Settings fills these in"}. <a href="${spotifyUrl(t)}" target="_blank" rel="noopener">Search Spotify ↗</a></p>`;
+    : `<p class="nolink">No Spotify link yet. <a href="${spotifyUrl(t)}" target="_blank" rel="noopener">Find it on Spotify ↗</a>, tap Share → Copy link, then <button class="linkish" type="button" data-act="paste" data-key="${esc(t.key)}">paste the link</button>.</p>`;
   const laneChip = (l) => l ? `<span class="chip ${esc(l)}"><span class="dot"></span>${esc(LANES[l] || l)}</span>` : "";
 
   const gearSvg = `<svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>`;
@@ -476,7 +507,8 @@
       <div class="field"><div class="field-label">Spotify</div>
         ${sp.connected()
           ? `<p class="help" style="margin-top:0"><span class="ok">Connected.</span> Keeps go to your "${PLAYLIST_NAME}" playlist.</p>
-             <div class="sheet-actions"><button class="btn small primary" type="button" data-act2="sp-sync">Add whole crate to playlist</button><button class="btn small" type="button" data-act2="sp-off">Disconnect</button></div>`
+             <div class="sheet-actions"><button class="btn small primary" type="button" data-act2="sp-sync">Add whole crate to playlist</button><button class="btn small" type="button" data-act2="sp-off">Disconnect</button></div>
+             <div class="sheet-actions"><button class="btn small" type="button" data-act2="sp-find">Find missing Spotify links</button></div>`
           : `<input type="text" id="spc" placeholder="Client ID from developer.spotify.com" value="${esc(store.get("sp-client") || "")}" autocomplete="off" autocapitalize="off" spellcheck="false">
              <p class="help">In your Spotify app's settings, add this Redirect URI: <b>${esc(sp.REDIRECT)}</b></p>
              <div class="sheet-actions"><button class="btn small primary" type="button" data-act2="sp-connect">Connect Spotify</button></div>`}
@@ -506,6 +538,15 @@
           spStatus.textContent = "Adding…";
           try { const n = await sp.syncCrate(); spStatus.innerHTML = `<span class="ok">${n ? `Added ${n} track${n > 1 ? "s" : ""}.` : "Your playlist already has everything."}</span>`; }
           catch (err) { spStatus.innerHTML = `<span class="bad">${esc(err.message)}</span>`; }
+        } else if (a === "sp-find") {
+          spStatus.textContent = "Searching Spotify…";
+          try {
+            const rep = await sp.resolveMissing(true);
+            if (!rep.length) { spStatus.innerHTML = '<span class="ok">Every track already has a link.</span>'; return; }
+            const ok = rep.filter((r) => r.ok).length;
+            spStatus.innerHTML = `<b>Found ${ok} of ${rep.length}.</b>` + rep.filter((r) => !r.ok).map((r) => `<br>• <b>${esc(r.title)}</b>: ${esc(r.why)}`).join("")
+              + (ok < rep.length ? "<br>For those, use “paste the link” on the track's card." : "");
+          } catch (err) { spStatus.innerHTML = `<span class="bad">${esc(err.message)}</span>`; }
         } else if (a === "sp-off") {
           sp.disconnect(); el.remove(); render();
         }
@@ -526,6 +567,7 @@
       case "theme": store.set("theme", themePref() === "dark" ? "light" : "dark"); applyTheme(); break;
       case "banner-off": store.set("sp-banner-off", "1"); render(); break;
       case "keep": if (!live) { toast("Add your GitHub key in Settings to save"); settingsSheet(); } else keepSheet(key); break;
+      case "paste": pasteLink(key); break;
       case "drop": if (!live) { toast("Add your GitHub key in Settings to save"); settingsSheet(); } else doDrop(key); break;
       case "toggle": openKey = openKey === key ? null : key; render(); break;
       case "tag": {
