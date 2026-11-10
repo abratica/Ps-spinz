@@ -389,21 +389,7 @@
       "added": "2026-11-08"
     }
   ],
-  "inbox": [
-    {
-      "date": "2026-11-08",
-      "picks": [
-        {
-          "key": "anyma-out-of-my-body-feat-ejae",
-          "title": "Out Of My Body (feat. EJAE)",
-          "artists": "Anyma",
-          "spotify": "6YYg1yA4raAeDzixJfITnb",
-          "lane": "dark",
-          "why": "Anyma's newest. Mathame dropped it in the same 2026 Seoul set. Vocal and moody, the same pull as Cola."
-        }
-      ]
-    }
-  ],
+  "inbox": [],
   "history": [
     {
       "key": "patrick-topping-be-sharp-say-nowt",
@@ -546,6 +532,17 @@
       "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-09",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "anyma-out-of-my-body-feat-ejae",
+      "title": "Out Of My Body (feat. EJAE)",
+      "artists": "Anyma",
+      "spotify": "6YYg1yA4raAeDzixJfITnb",
+      "decision": "drop",
+      "lane": "dark",
+      "role": null,
+      "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-10"
     }
   ]
