@@ -396,14 +396,6 @@
       "date": "2026-11-09",
       "picks": [
         {
-          "key": "michael-bibi-kinahau-audio-bullys-different-side",
-          "title": "Different Side",
-          "artists": "Michael Bibi, KinAhau, Audio Bullys",
-          "spotify": "76Lq3l4TEzt2javAjXezAr",
-          "lane": "groovy",
-          "why": "Rafael Cerato opened his Soho Garden Dubai set with his own The Castle, then this. More Bibi groove to sit next to Mystery Of Raw and Stay Missing."
-        },
-        {
           "key": "camelphat-rafael-cerato-amarha-don-t-stop-feat-amarha-extended-mix",
           "title": "Don't Stop (feat. Amarha) (Extended Mix)",
           "artists": "CamelPhat, Rafael Cerato, Amarha",
@@ -533,6 +525,17 @@
       "decision": "keep",
       "lane": "groovy",
       "role": "groover",
+      "pickedOn": "2026-11-09",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "michael-bibi-kinahau-audio-bullys-different-side",
+      "title": "Different Side",
+      "artists": "Michael Bibi, KinAhau, Audio Bullys",
+      "spotify": "76Lq3l4TEzt2javAjXezAr",
+      "decision": "drop",
+      "lane": "groovy",
+      "role": null,
       "pickedOn": "2026-11-09",
       "decidedOn": "2026-11-10"
     }
