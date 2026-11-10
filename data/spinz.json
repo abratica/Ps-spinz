@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "mind-against-human404-anakim-late-at-night",
+      "title": "Late at Night",
+      "artists": "Mind Against, HUMAN404, Anakim",
+      "spotify": "0I5kavrL6aUxqMVYdtrReQ",
+      "lane": "dark",
+      "role": null,
+      "from": "pick",
+      "added": "2026-11-10",
+      "why": "In the same Cassian Brooklyn set it came right after Da Hool's Meet Her At The Loveparade, a few tracks from Where I'm From. Pairs with your Love Parade and Where I'm From keeps."
+    },
+    {
       "key": "rafael-cerato-wave-wave-sound-vibrate",
       "title": "Sound Vibrate",
       "artists": "Rafael Cerato, Wave Wave",
@@ -398,19 +409,6 @@
           "why": "Cassian played it early in his Brooklyn Storehouse set, the same set where he played Come To Life and Where I'm From. Two of your reference artists on When Stars Align, and the Extended Mix gives you a long intro."
         }
       ]
-    },
-    {
-      "date": "2026-11-10",
-      "picks": [
-        {
-          "key": "mind-against-human404-anakim-late-at-night",
-          "title": "Late at Night",
-          "artists": "Mind Against, HUMAN404, Anakim",
-          "spotify": "0I5kavrL6aUxqMVYdtrReQ",
-          "lane": "dark",
-          "why": "In the same Cassian Brooklyn set it came right after Da Hool's Meet Her At The Loveparade, a few tracks from Where I'm From. Pairs with your Love Parade and Where I'm From keeps."
-        }
-      ]
     }
   ],
   "history": [
@@ -507,6 +505,17 @@
       "title": "Sound Vibrate",
       "artists": "Rafael Cerato, Wave Wave",
       "spotify": "5DppI12CQjr4C3skiU7jfG",
+      "decision": "keep",
+      "lane": "dark",
+      "role": null,
+      "pickedOn": "2026-11-10",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "mind-against-human404-anakim-late-at-night",
+      "title": "Late at Night",
+      "artists": "Mind Against, HUMAN404, Anakim",
+      "spotify": "0I5kavrL6aUxqMVYdtrReQ",
       "decision": "keep",
       "lane": "dark",
       "role": null,
