@@ -81,7 +81,7 @@
 
   async function load() {
     if (ghKey()) {
-      try { const r = await ghRead(); S = r.state; sha = r.sha; live = true; return; }
+      try { const r = await ghRead(); S = r.state; sha = r.sha; live = true; lastLoad = Date.now(); return; }
       catch (e) { live = false; console.warn("GitHub read failed, showing the published copy", e); }
     }
     const res = await fetch("data/spinz.json", { cache: "no-store" });
@@ -153,6 +153,7 @@
     const hit = findPick(S, key); if (!hit || pendingDrops.has(key)) return;
     const card = app.querySelector(`[data-key="${CSS.escape(key)}"]`);
     if (card) card.classList.add("gone");
+    setTimeout(() => { if (pendingDrops.has(key)) render(); }, 220);   // after the fade, take it out of the list
     const fire = () => {
       pendingDrops.delete(key);
       const p = { ...hit.pick }, pickedOn = hit.day.date, t = today();
@@ -167,12 +168,21 @@
     const timer = setTimeout(fire, 4500);
     pendingDrops.set(key, { timer, fire });
     toast(`Dropped ${hit.pick.title}`, "Undo", () => {
-      clearTimeout(timer); pendingDrops.delete(key);
-      if (card) card.classList.remove("gone");
+      clearTimeout(timer); pendingDrops.delete(key); render();
     }, 4500);
   }
   function flushDrops() { for (const { timer, fire } of [...pendingDrops.values()]) { clearTimeout(timer); fire(); } }
-  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushDrops(); });
+  let lastLoad = 0;
+  async function refresh() {
+    if (!live || pendingDrops.size || Date.now() - lastLoad < 5000) return;
+    await chain;                                  // let any save finish first
+    try { const r = await ghRead(); S = r.state; sha = r.sha; lastLoad = Date.now(); render(); } catch { /* offline: keep what's shown */ }
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") flushDrops();
+    else refresh();
+  });
+  window.addEventListener("pageshow", (e) => { if (e.persisted) refresh(); });
   window.addEventListener("pagehide", flushDrops);
 
   async function pasteLink(key) {
@@ -378,7 +388,7 @@
   const themeSvg = `<svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>`;
 
   function masthead() {
-    const waiting = S.inbox.reduce((n, d) => n + d.picks.length, 0);
+    const waiting = S.inbox.reduce((n, d) => n + d.picks.filter((p) => !pendingDrops.has(p.key)).length, 0);
     const r = route();
     const line = r === "inbox" ? (waiting ? `${waiting} to hear` : "All caught up") : `${S.crate.length} tracks in your crate`;
     return `<header class="masthead">
@@ -404,7 +414,8 @@
   }
 
   function inboxView() {
-    const days = [...S.inbox].sort((a, b) => b.date.localeCompare(a.date));
+    const days = [...S.inbox].map((d) => ({ ...d, picks: d.picks.filter((p) => !pendingDrops.has(p.key)) }))
+      .filter((d) => d.picks.length).sort((a, b) => b.date.localeCompare(a.date));
     if (!days.length) return `<div class="empty"><b>All caught up</b>Tomorrow's three show up in the morning.</div>`;
     return days.map((d) => `<section class="day">
       <div class="day-head"><h2>${esc(niceDate(d.date))}</h2><span class="left">${d.picks.length} left</span></div>
