@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "george-ellinas-rainmaker-extended-club-mix",
+      "title": "Rainmaker (Extended Club Mix)",
+      "artists": "George Ellinas",
+      "spotify": "2TUQ1BgtOgrmYJk3er5sVl",
+      "lane": "groovy",
+      "role": "groover",
+      "from": "pick",
+      "added": "2026-11-10",
+      "why": "Cross-set: Cassian played it at Brooklyn Storehouse, a few tracks before Come To Life, and Rafael Cerato played it in his Soho Garden Dubai set."
+    },
+    {
       "key": "mind-against-human404-anakim-late-at-night",
       "title": "Late at Night",
       "artists": "Mind Against, HUMAN404, Anakim",
@@ -385,14 +396,6 @@
       "date": "2026-11-09",
       "picks": [
         {
-          "key": "george-ellinas-rainmaker-extended-club-mix",
-          "title": "Rainmaker (Extended Club Mix)",
-          "artists": "George Ellinas",
-          "spotify": "2TUQ1BgtOgrmYJk3er5sVl",
-          "lane": "groovy",
-          "why": "Cross-set: Cassian played it at Brooklyn Storehouse, a few tracks before Come To Life, and Rafael Cerato played it in his Soho Garden Dubai set."
-        },
-        {
           "key": "michael-bibi-kinahau-audio-bullys-different-side",
           "title": "Different Side",
           "artists": "Michael Bibi, KinAhau, Audio Bullys",
@@ -520,6 +523,17 @@
       "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-10",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "george-ellinas-rainmaker-extended-club-mix",
+      "title": "Rainmaker (Extended Club Mix)",
+      "artists": "George Ellinas",
+      "spotify": "2TUQ1BgtOgrmYJk3er5sVl",
+      "decision": "keep",
+      "lane": "groovy",
+      "role": "groover",
+      "pickedOn": "2026-11-09",
       "decidedOn": "2026-11-10"
     }
   ]
