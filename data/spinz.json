@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "rafael-cerato-wave-wave-sound-vibrate",
+      "title": "Sound Vibrate",
+      "artists": "Rafael Cerato, Wave Wave",
+      "spotify": "5DppI12CQjr4C3skiU7jfG",
+      "lane": "dark",
+      "role": null,
+      "from": "pick",
+      "added": "2026-11-10",
+      "why": "Cassian played it two tracks before Come To Life in his Brooklyn Storehouse 2026 set. A driving, darker tech house tool from 1001 Recordings to bridge your groovy and dark lanes."
+    },
+    {
       "key": "kh-solomun-looking-at-your-pager-solomun-extended-remix",
       "title": "Looking at Your Pager (Solomun Extended Remix)",
       "artists": "KH, Solomun",
@@ -392,14 +403,6 @@
       "date": "2026-11-10",
       "picks": [
         {
-          "key": "rafael-cerato-wave-wave-sound-vibrate",
-          "title": "Sound Vibrate",
-          "artists": "Rafael Cerato, Wave Wave",
-          "spotify": "5DppI12CQjr4C3skiU7jfG",
-          "lane": "dark",
-          "why": "Cassian played it two tracks before Come To Life in his Brooklyn Storehouse 2026 set. A driving, darker tech house tool from 1001 Recordings to bridge your groovy and dark lanes."
-        },
-        {
           "key": "mind-against-human404-anakim-late-at-night",
           "title": "Late at Night",
           "artists": "Mind Against, HUMAN404, Anakim",
@@ -495,6 +498,17 @@
       "spotify": "4vGqDjCAy12UxV4UlniUwk",
       "decision": "drop",
       "lane": "groovy",
+      "role": null,
+      "pickedOn": "2026-11-10",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "rafael-cerato-wave-wave-sound-vibrate",
+      "title": "Sound Vibrate",
+      "artists": "Rafael Cerato, Wave Wave",
+      "spotify": "5DppI12CQjr4C3skiU7jfG",
+      "decision": "keep",
+      "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-10",
       "decidedOn": "2026-11-10"
