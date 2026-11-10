@@ -2,6 +2,17 @@
   "version": 1,
   "crate": [
     {
+      "key": "camelphat-rafael-cerato-amarha-don-t-stop-feat-amarha-extended-mix",
+      "title": "Don't Stop (feat. Amarha) (Extended Mix)",
+      "artists": "CamelPhat, Rafael Cerato, Amarha",
+      "spotify": "22WkadZRrOI9QIYZncDsMw",
+      "lane": "dark",
+      "role": null,
+      "from": "pick",
+      "added": "2026-11-10",
+      "why": "Cassian played it early in his Brooklyn Storehouse set, the same set where he played Come To Life and Where I'm From. Two of your reference artists on When Stars Align, and the Extended Mix gives you a long intro."
+    },
+    {
       "key": "george-ellinas-rainmaker-extended-club-mix",
       "title": "Rainmaker (Extended Club Mix)",
       "artists": "George Ellinas",
@@ -391,19 +402,6 @@
           "why": "Anyma's newest. Mathame dropped it in the same 2026 Seoul set. Vocal and moody, the same pull as Cola."
         }
       ]
-    },
-    {
-      "date": "2026-11-09",
-      "picks": [
-        {
-          "key": "camelphat-rafael-cerato-amarha-don-t-stop-feat-amarha-extended-mix",
-          "title": "Don't Stop (feat. Amarha) (Extended Mix)",
-          "artists": "CamelPhat, Rafael Cerato, Amarha",
-          "spotify": "22WkadZRrOI9QIYZncDsMw",
-          "lane": "dark",
-          "why": "Cassian played it early in his Brooklyn Storehouse set, the same set where he played Come To Life and Where I'm From. Two of your reference artists on When Stars Align, and the Extended Mix gives you a long intro."
-        }
-      ]
     }
   ],
   "history": [
@@ -535,6 +533,17 @@
       "spotify": "76Lq3l4TEzt2javAjXezAr",
       "decision": "drop",
       "lane": "groovy",
+      "role": null,
+      "pickedOn": "2026-11-09",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "camelphat-rafael-cerato-amarha-don-t-stop-feat-amarha-extended-mix",
+      "title": "Don't Stop (feat. Amarha) (Extended Mix)",
+      "artists": "CamelPhat, Rafael Cerato, Amarha",
+      "spotify": "22WkadZRrOI9QIYZncDsMw",
+      "decision": "keep",
+      "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-09",
       "decidedOn": "2026-11-10"
