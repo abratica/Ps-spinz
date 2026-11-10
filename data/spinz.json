@@ -2,6 +2,16 @@
   "version": 1,
   "crate": [
     {
+      "key": "sidepiece-cry-for-you",
+      "title": "Cry For You",
+      "artists": "SIDEPIECE",
+      "spotify": "2xVDlAuxS6rhEMXOlX9h07",
+      "lane": "groovy",
+      "role": null,
+      "from": "added",
+      "added": "2026-11-10"
+    },
+    {
       "key": "camelphat-rafael-cerato-amarha-don-t-stop-feat-amarha-extended-mix",
       "title": "Don't Stop (feat. Amarha) (Extended Mix)",
       "artists": "CamelPhat, Rafael Cerato, Amarha",
@@ -389,7 +399,53 @@
       "added": "2026-11-08"
     }
   ],
-  "inbox": [],
+  "inbox": [
+    {
+      "date": "2026-11-10",
+      "picks": [
+        {
+          "key": "vintage-culture-gabss-lost",
+          "title": "Lost",
+          "artists": "Vintage Culture, Gabss",
+          "spotify": "1OeW24Ek3LEthuQz1UyYCj",
+          "lane": "groovy",
+          "why": "In both 2026 Sidepiece sets with Cry For You: Lip Service Radio #001 and Radius Chicago. Vocal, emotional house built on a Frank Ocean flip."
+        },
+        {
+          "key": "piero-pirupa-fsu",
+          "title": "FSU",
+          "artists": "Piero Pirupa",
+          "spotify": "0G7agEIhrDyLxgznoS5WFX",
+          "lane": "groovy",
+          "why": "Also in both Sidepiece sets: he opened Lip Service Radio #001 with it and closed Radius Chicago with it."
+        },
+        {
+          "key": "kamino-kyra-mastro-vertigo",
+          "title": "Vertigo",
+          "artists": "Kamino, Kyra Mastro",
+          "spotify": "6uaReMYzSpw9NFReHxAs1J",
+          "lane": "groovy",
+          "why": "Sidepiece played it straight after Cry For You on Lip Service Radio #001. A ready-made pair to practice."
+        },
+        {
+          "key": "vylow-talkin-bout",
+          "title": "Talkin Bout",
+          "artists": "Vylow",
+          "spotify": "2gOOxL929JS2Yw7CBiCzTc",
+          "lane": "groovy",
+          "why": "Sidepiece's next track after Cry For You at Radius Chicago 2026. Short and punchy, made for a quick swap."
+        },
+        {
+          "key": "aluna-sidepiece-misbehave",
+          "title": "Misbehave",
+          "artists": "Aluna, SIDEPIECE",
+          "spotify": "1FRWjWnOf6NRePXN38tkQS",
+          "lane": "groovy",
+          "why": "Sidepiece played it in both 2026 sets alongside Cry For You. Same bouncy, vocal energy."
+        }
+      ]
+    }
+  ],
   "history": [
     {
       "key": "patrick-topping-be-sharp-say-nowt",
@@ -543,6 +599,17 @@
       "lane": "dark",
       "role": null,
       "pickedOn": "2026-11-08",
+      "decidedOn": "2026-11-10"
+    },
+    {
+      "key": "sidepiece-cry-for-you",
+      "title": "Cry For You",
+      "artists": "SIDEPIECE",
+      "spotify": "2xVDlAuxS6rhEMXOlX9h07",
+      "decision": "keep",
+      "lane": "groovy",
+      "role": null,
+      "pickedOn": null,
       "decidedOn": "2026-11-10"
     }
   ]
