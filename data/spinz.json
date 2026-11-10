@@ -392,14 +392,6 @@
       "date": "2026-11-10",
       "picks": [
         {
-          "key": "ronnie-spiteri-becca-s-booty",
-          "title": "Becca's Booty",
-          "artists": "Ronnie Spiteri",
-          "spotify": "4vGqDjCAy12UxV4UlniUwk",
-          "lane": "groovy",
-          "why": "Michael Bibi and Franky Rizardo played this straight after Mystery Of Raw in their Robot Heart set at Burning Man 2026. A ready-made next track for one you kept."
-        },
-        {
           "key": "rafael-cerato-wave-wave-sound-vibrate",
           "title": "Sound Vibrate",
           "artists": "Rafael Cerato, Wave Wave",
@@ -495,6 +487,17 @@
       "role": "groover",
       "pickedOn": "2026-11-08",
       "decidedOn": "2026-11-08"
+    },
+    {
+      "key": "ronnie-spiteri-becca-s-booty",
+      "title": "Becca's Booty",
+      "artists": "Ronnie Spiteri",
+      "spotify": "4vGqDjCAy12UxV4UlniUwk",
+      "decision": "drop",
+      "lane": "groovy",
+      "role": null,
+      "pickedOn": "2026-11-10",
+      "decidedOn": "2026-11-10"
     }
   ]
 }
