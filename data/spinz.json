@@ -560,6 +560,35 @@
           "why": "Franky Rizardo played it in his Burning Man 2026 b2b with Michael Bibi (Robot Heart), two tracks before Mystery of Raw. A groove partner for that keep."
         }
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "picks": [
+        {
+          "key": "snirco-millero-sweet-moment",
+          "title": "Sweet Moment",
+          "artists": "Snirco, Millero",
+          "spotify": "2mSvvv7lMXEUMOaWEGLD6W",
+          "lane": "groovy",
+          "why": "CamelPhat played it right before Set Me Free (CamelPhat Remix) at both his Pacha Tuesdays opening party and his 5 June 2025 Pacha set. A tested lead-in to that keep."
+        },
+        {
+          "key": "ugo-banchi-legacy",
+          "title": "Legacy",
+          "artists": "Ugo Banchi",
+          "spotify": "5aqGlcwpEXMuPN7oeD52UF",
+          "lane": "dark",
+          "why": "In CamelPhat's 5 June 2025 Pacha set it came straight after Born Like That, which he played right after Set Me Free. Both are in your crate, so this gives you the next track out."
+        },
+        {
+          "key": "omri-smadar-jenia-tarsol-nona-choir-lose-your-soul",
+          "title": "Lose Your Soul",
+          "artists": "Omri Smadar, Jenia Tarsol, Nona Choir",
+          "spotify": "0noNkxD0ZfMvZ078VqOf54",
+          "lane": "dark",
+          "why": "In both of those CamelPhat Pacha sets it came right before Sweet Moment, a few tracks ahead of Set Me Free. Practice the run Lose Your Soul, Sweet Moment, Set Me Free, Born Like That."
+        }
+      ]
     }
   ],
   "history": [
