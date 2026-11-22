@@ -763,6 +763,35 @@
           "why": "Kevin de Vries played it right before Anyma's Pictures Of You (in your crate) at Kompass, Ghent, a ready-made lead-in into that track."
         }
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "picks": [
+        {
+          "key": "butch-k-lsch-countach-k-lsch-remix",
+          "title": "Countach (Kölsch Remix)",
+          "artists": "Butch, Kölsch",
+          "spotify": "2mwptYSUenZkc1EL20HC30",
+          "lane": "dark",
+          "why": "Kölsch played it right after George Ellinas' Rainmaker (Extended Club Mix), which you kept, in his Tomorrowland 2026 main stage set. A ready-made next track out of Rainmaker."
+        },
+        {
+          "key": "camelphat-volkoder-unique-moment-extended-mix",
+          "title": "Unique Moment (Extended Mix)",
+          "artists": "CamelPhat, Volkoder",
+          "spotify": "0motf5PzILBQql4FgMjq9Z",
+          "lane": "dark",
+          "why": "Cassian played it in his Club Space Miami sunrise set, the same set where he played Come To Life, Where I'm From and Born Like That from your crate."
+        },
+        {
+          "key": "sidepiece-g-pol-control",
+          "title": "Control",
+          "artists": "SIDEPIECE, G-Pol",
+          "spotify": "7o3m0OoVfFgBy8j1sxJwTF",
+          "lane": "groovy",
+          "why": "From SIDEPIECE, whose Cry For You you kept. Cassian used it as one of the first tracks of his Club Space Miami set, so it works as a groovy warm-up before the darker stuff."
+        }
+      ]
     }
   ],
   "history": [
